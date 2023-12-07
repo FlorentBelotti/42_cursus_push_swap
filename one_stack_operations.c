@@ -6,48 +6,115 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:35 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/11/21 15:01:47 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:19:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* sa (swap a) : Intervertit les 2 premiers éléments au sommet de la pile a.
-Ne fait rien s’il n’y en a qu’un ou aucun. */
-
-void	sa(t_list lst_a)
+/* sa (swap a) : Exchanges the first two nodes of the pile "lst_a" */
+/*
+void	swap(t_list **lst)
 {
-	t_list	*temp;
+	t_list	*first;
+	t_list	*second;
 
-	temp = lst_a ;
-	if (ft_lstsize(temp) < 1)
-		return ;
+	first = *lst_a;
+	second = *lst_a->next;
+	first->next = second->next;
+	second->next = first;
+	*lst_a = second;
+}
+
+void	sa(t_list **lst_a)
+{
+	swap(la)
+	print("sa")
+)
+void	sb(t_list **lst_b)
+{
+	swap(lb)
+	print("sb")
+)
+*/
+
+/* sa (swap a) : Exchanges the first two nodes of the pile "lst_a" */
+
+void	sa(t_list **lst_a)
+{
+	t_list	*first;
+	t_list	*second;
+
+	first = *lst_a;
+	second = *lst_a->next;
+	first->next = second->next;
+	second->next = first;
+	*lst_a = second;
+}
+
+/* sb (swap b ) : Exchanges the first two nodes of the pile "lst_b" */
+
+void	sb(t_list **lst_b)
+{
+	t_list	*first;
+	t_list	*second;
+
+	first = *lst_b;
+	second = *lst_b->next;
+	first->next = second->next;
+	second->next = first;
+	*lst_b = second;
 
 }
 
-/* sb (swap b ) : Intervertit les 2 premiers éléments au sommet de la pile b.
-Ne fait rien s’il n’y en a qu’un ou aucun. */
+/* ra (rotate a) : Shifts all elements of the pile "lst_a" one position upwards.
+The first element becomes the last. */
 
-void	sb(t_list lst_b)
+void	ra(t_list **lst_a)
+{
+	t_list	*first_to_last;
+	t_list	*second_to_last;
 
-/* ra (rotate a) : Décale d’une position vers le haut tous les élements de la pile a.
-Le premier élément devient le dernier. */
+	if (!lst_a || !lst_a->next)
+		return ;
+	*first_to_last = lst_a;
+	*second_to_last = ft_lstlast(lst_a);
+	lst_a = first_to_last->next;
+	second_to_last->next = *first_to_last;
+	*first_to_last->next = NULL;
+}
 
-void	ra(t_list lst_a)
+/* rb (rotate b) : Shifts all elements of the pile "lst_b" one position upwards.
+The first element becomes the last. */
 
-/* rb (rotate b) : Décale d’une position vers le haut tous les élements de la pile b.
-Le premier élément devient le dernier. */
+void	rb(t_list **lst_b)
+{
+	t_list	*first_to_last;
+	t_list	*second_to_last;
 
-void	rb(t_list lst_b)
+	if (!lst_b || !lst_b->next)
+		return ;
+	*first_to_last = lst_b;
+	*second_to_last = ft_lstlast(lst_b);
+	lst_b = first_to_last->next;
+	second_to_last->next = *first_to_last;
+	*first_to_last->next = NULL;
+}
 
-/* rra (reverse rotate a) : Décale d’une position vers le bas tous les élements de
-la pile a. Le dernier élément devient le premier. */
+/* rra (reverse rotate a) : Shifts all elements of the pile "lst_a" one position
+down. The last element becomes the first. */
 
-void	rra(t_list lst_a)
+void	rra(t_list **lst_a)
+{
+	t_list	*last_to_first;
+	t_list	*second_last;
 
-/* rrb (reverse rotate b) : Décale d’une position vers le bas tous les élements de
-la pile b. Le dernier élément devient le premier. */
-
-void	rrb(t_list lst_b)
-
+	if (!lst_a || !lst_a->next)
+		return ;
+	*last_to_first = ft_lstlast(lst_a);
+	*second_last = ft_lstblast(lst_a);
+	last_to_first->next = *lst_a;
+	second_last->next = NULL;
+	*lst_a = last_to_first;
+}
 
