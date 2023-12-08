@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/07 18:12:17 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/08 11:33:32 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 /* Libraries */
 
-#include <stdef.h>
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -24,8 +23,8 @@
 	/* data : contains the piles and the variables. */
 
 typedef struct s_data {
-		struct s_list	* list_a;
-		struct s_list	* list_b;
+		struct s_list	*lst_a;
+		struct s_list	*lst_b;
 }	t_data;
 
 	/* list : structure of the piles. */
@@ -33,6 +32,7 @@ typedef struct s_data {
 typedef struct s_list {
 	void			*content;
 	struct s_list	*next;
+	struct s_list	*previous;
 }	t_list;
 
 /* Functions files : description of the functions can be found in the
@@ -42,30 +42,34 @@ indicated .c files. */
 	troughout the project. */
 
 int		ft_lstsize(t_list **lst);
-t_list	*ft_lstlast(t_list **lst);
-t_list	*ft_lstblast(t_list **lst)
+
+	/* handle_stack : Contains functions called for stack manipulation. */
+
+void	ft_swap_lst(t_data *data);
+void	ft_lst_upward(t_data *data);
+void	ft_lst_down(t_data *data);
 
 	/* one_stack_operations.c : contains nodes movements and nodes modifications
 	functions applied to a single list. */
 
-void	sa(t_list **lst_a);
-void	sb(t_list **lst_b);
-void	ra(t_list **lst_a);
-void	rb(t_list **lst_b);
-void	rra(t_list **lst_a);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rra(t_data *data);
 
 	/* one_stack_operations_2.c : contains nodes movements and nodes
 	modifications functions applied to a single list. */
 
-void	rrr(t_list **lst_a, t_list **lst_b);
+void	rrr(t_data *data);
 
 	/* two_stack_operations.c : contains nodes movements and nodes modifications
 	functions applied between lists. */
 
-void	ss(t_list **lst_a, t_list **lst_b);
-void	pa(t_list **lst_a, t_list **lst_b);
-void	pb(t_list **lst_a, t_list **lst_b);
-void	rr(t_list **lst_a, t_list **lst_b);
-void	rrb(t_list **lst_b);
+void	ss(t_data *data);
+void	pa(t_data *data);
+void	pb(t_data *data);
+void	rr(t_data *data);
+void	rrb(t_data *data);
 
 #endif

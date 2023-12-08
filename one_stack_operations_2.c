@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:47:45 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/07 17:03:46 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/08 11:38:36 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,8 @@
 /* rrb (reverse rotate b) : Shifts all elements of the pile "lst_b" one position
 down. The last element becomes the first. */
 
-void	rrb(t_list **lst_b)
+void	rrb(t_data *data)
 {
-	t_list	*last_to_first;
-	t_list	*second_last;
-
-	if (!lst_b || !lst_b->next)
-		return ;
-	*last_to_first = ft_lstlast(lst_b);
-	*second_last = ft_lstblast(lst_b);
-	last_to_first->next = *lst_b;
-	second_last->next = NULL;
-	*lst_b = last_to_first;
+	ft_lst_down(data->lst_b);
+	write (1, "rrb\n", 4);
 }
