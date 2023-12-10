@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   printf_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/10 17:53:41 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/10/14 16:09:00 by fbelotti          #+#    #+#             */
+/*   Updated: 2023/12/10 15:08:33 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* ft_lstsize : iterate on a list to find its size "i" */
-
-int	ft_lstsize(t_list **lst)
+int	ft_putchar(int c)
 {
-	int	i;
-	t_list	*current;
-
-	i = 0;
-	current = *lst;
-	while (current)
-	{
-		current = current->next;
-		i++;
-	}
-	return (i);
+	write (1, &c, 1);
+	return (1);
 }
 
-/* ft_lstlast : return the last node of the linked list. */
-
-t_list	*ft_lstlast(t_list **lst)
+int	ft_putstr(char *str)
 {
-	t_list	*temp;
+	int	i;
+	int	count;
 
-	if (!lst)
-		return (NULL);
-	temp = *lst;
-	while (temp->next)
-		temp = temp->next;
-	return (temp);
+	i = 0;
+	count = 0;
+	if (!str)
+	{
+		write (1, "(null)", 6);
+		count = 6;
+		return (count);
+	}
+	while (str[i])
+	{
+		count += ft_putchar(str[i]);
+		i++;
+	}
+	return (count);
 }

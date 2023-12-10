@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/08 11:33:32 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/10 18:21:42 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 /* Libraries */
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
 /* Structure */
 
 	/* data : contains the piles and the variables. */
 
 typedef struct s_data {
-		struct s_list	*lst_a;
-		struct s_list	*lst_b;
+	struct s_list	*lst_a;
+	struct s_list	*lst_b;
 }	t_data;
 
 	/* list : structure of the piles. */
@@ -42,12 +43,14 @@ indicated .c files. */
 	troughout the project. */
 
 int		ft_lstsize(t_list **lst);
+t_list	*ft_lstlast(t_list **lst);
 
 	/* handle_stack : Contains functions called for stack manipulation. */
 
-void	ft_swap_lst(t_data *data);
-void	ft_lst_upward(t_data *data);
-void	ft_lst_down(t_data *data);
+void	ft_swap_lst(t_list **lst);
+void	ft_lst_upward(t_list **lst);
+void	ft_lst_down(t_list **lst);
+void	*ft_lst_add(t_list **lst_a, int val);
 
 	/* one_stack_operations.c : contains nodes movements and nodes modifications
 	functions applied to a single list. */
@@ -71,5 +74,16 @@ void	pa(t_data *data);
 void	pb(t_data *data);
 void	rr(t_data *data);
 void	rrb(t_data *data);
+
+/* printf implementation */
+
+int		ft_printf(const char *form, ...);
+int		ft_putchar(int c);
+int		ft_putstr(char *str);
+int		ft_print_digit_lower(long n, int base);
+int		ft_print_digit_upper(long n, int base);
+int		ft_putnbr(int n);
+int		ft_putadd(void *add);
+int		ft_put_unsigned(unsigned int n);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   one_stack_operations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:35 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/08 11:38:45 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/10 18:25:01 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	sa(t_data *data)
 {
-	ft_swap(data->lst_a);
+	ft_swap_lst(&(data->lst_a));
 	write (1, "sa\n", 3);
 }
 
@@ -24,7 +24,7 @@ void	sa(t_data *data)
 
 void	sb(t_data *data)
 {
-	ft_swap(data->lst_b);
+	ft_swap_lst(&(data->lst_b));
 	write (1, "sb\n", 3);
 }
 
@@ -33,7 +33,7 @@ The first element becomes the last. */
 
 void	ra(t_data *data)
 {
-	ft_lst_upward(data->lst_a);
+	ft_lst_upward(&(data->lst_a));
 	write (1, "ra\n", 3);
 }
 
@@ -42,7 +42,7 @@ The first element becomes the last. */
 
 void	rb(t_data *data)
 {
-	ft_lst_upward(data->lst_b);
+	ft_lst_upward(&(data->lst_b));
 	write (1, "rb\n", 3);
 }
 
@@ -51,7 +51,6 @@ down. The last element becomes the first. */
 
 void	rra(t_data *data)
 {
-	ft_lst_down(data->lst_a);
+	ft_lst_down(&(data->lst_a));
 	write (1, "rra\n", 4);
 }
-

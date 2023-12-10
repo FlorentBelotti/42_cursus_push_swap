@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   one_stack_operations_2.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:47:45 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/08 11:38:36 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/10 17:48:13 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ down. The last element becomes the first. */
 
 void	rrb(t_data *data)
 {
-	ft_lst_down(data->lst_b);
+	ft_lst_down(&(data->lst_b));
 	write (1, "rrb\n", 4);
 }
