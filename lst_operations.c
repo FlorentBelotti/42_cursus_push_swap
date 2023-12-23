@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_stack.c                                     :+:      :+:    :+:   */
+/*   lst_operations.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 09:38:47 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/10 18:24:45 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:06:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_lst_upward(t_list **lst)
 	first_to_last->next = NULL;
 }
 
-	/* ft_lst_downwards : the last node become the first node. */
+	/* ft_lst_down : the last node become the first node. */
 
 void	ft_lst_down(t_list **lst)
 {
@@ -66,20 +66,23 @@ void	ft_lst_down(t_list **lst)
 	}
 }
 
-	/* ft_lst_add : function used to create lst_a. */
+	/* ft_lst_interchanger : the first node of src become the first node
+	of dest. The second node of src become the first node of src. */
 
-void	*ft_lst_add(t_list **lst_a, int val)
+void	ft_lst_interchanger(t_list **src, t_list **dest)
 {
-	t_list	*node;
+	t_list	*src_first_node;
+	t_list	*src_second_node;
+	t_list	*dest_first_node;
 
-	node = (t_list *) malloc (sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = (void *)val;
-	node->next = *lst_a;
-	node->previous = NULL;
-	if (lst_a != NULL)
-		(*lst_a)->previous = node;
-	*lst_a = node;
-	return (lst_a);
+	if (ft_lstsize(src) < 1 || !src)
+		return ;
+	src_first_node = *src;
+	src_second_node = src_first_node->next;
+	dest_first_node = *dest;
+	src_first_node->next = dest_first_node;
+	src_first_node->previous = NULL;
+	src_second_node->previous = NULL;
+	*src = src_second_node;
+	*dest = src_first_node;
 }

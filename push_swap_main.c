@@ -1,52 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   push_swap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 14:45:16 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/10 18:21:10 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
+/*   Updated: 2023/12/23 14:25:09 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_list(t_list *head)
-{
-	while (head != NULL)
-	{
-		ft_printf("%d ", (int *)head->content);
-		head = head->next;
-	}
-	ft_printf("\n");
-}
+#include <stdio.h>
 
 int	main(int ac, char **av)
 {
-	t_data	data;
-	t_list	*current;
-	t_list	*next;
 	int		i;
-	int		value;
+	int		val;
+	t_data	data;
 
 	i = 1;
 	data.lst_a = NULL;
-	data.lst_b = NULL;
+	if (ac < 1 || !av[1][0])
+		return (1);
+	if (ac == 2)
+		av = push_swap_split(av[1], ' ');
 	while (i < ac)
 	{
-		value = atoi(av[i]);
-		ft_lst_add(&data.lst_a, value);
+		val = atoi(av[i]);
+		create_stack(&data.lst_a, val);
 		i++;
 	}
-	ft_printf("Ma liste :");
 	print_list(data.lst_a);
-	current = data.lst_a;
-	while (current != NULL)
+}
+
+void	print_list(t_list *lst_a)
+{
+	t_list	*current_a;
+
+	current_a = lst_a;
+	while (current_a != NULL)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		printf("[previous: %p]\n[content: %d]\n[next: %p]\n[current adress: %p]\n", current_a->previous, current_a->content, current_a->next, current_a);
+		current_a = current_a->next;
+		printf("---------\n");
 	}
-	return (0);
 }
