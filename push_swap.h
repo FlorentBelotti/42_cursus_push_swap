@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/23 14:20:20 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:26:26 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ indicated .c files. */
 
 int		ft_lstsize(t_list **lst);
 t_list	*ft_lstlast(t_list **lst);
+int		ft_atoi(char *str);
 
 	/* lst_operations : Contains functions called for stack manipulation. */
 
@@ -88,6 +89,7 @@ char	*ft_strncpy(char *s1, char *s2, int n);
 int		count_words(char *str, char sep);
 char	**push_swap_split(char *av, char sep);
 void	memory_allocation(char **args, char *av);
+void	free_array(char **args, int j);
 
 	/* test */
 

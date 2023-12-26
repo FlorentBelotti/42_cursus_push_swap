@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/23 14:25:09 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:33:22 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ int	main(int ac, char **av)
 
 	i = 1;
 	data.lst_a = NULL;
-	if (ac < 1 || !av[1][0])
+	if (ac == 1)
 		return (1);
 	if (ac == 2)
-		av = push_swap_split(av[1], ' ');
-	while (i < ac)
 	{
-		val = atoi(av[i]);
+		av = push_swap_split(av[1], ' ');
+		i = 0;
+	}
+	while (av[i])
+	{
+		val = ft_atoi(av[i]);
 		create_stack(&data.lst_a, val);
 		i++;
 	}

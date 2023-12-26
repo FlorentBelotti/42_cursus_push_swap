@@ -6,21 +6,20 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:26:39 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/23 14:40:10 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:21:06 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "stdio.h"
 
 char	*ft_strncpy(char *s1, char *s2, int n)
 {
 	int	i;
 
 	i = -1;
-	while (s2[i] && ++i < n)
-	{
+	while (s2[++i] && i < n)
 		s1[i] = s2[i];
-	}
 	s1[i] = '\0';
 	return (s1);
 }
@@ -55,7 +54,6 @@ char	**push_swap_split(char *av, char sep)
 	args = malloc (sizeof(char *) * (word_nb + 1));
 	if (!args)
 		return (NULL);
-	args[0] = 0;
 	memory_allocation(args, av);
 	return (args);
 }
@@ -66,9 +64,8 @@ void	memory_allocation(char **args, char *av)
 	int	j;
 	int	flag;
 
-	i = 0;
 	j = 0;
-	flag = 0;
+	i = 0;
 	while (av[i])
 	{
 		while (av[i] && av[i] == ' ')
@@ -79,8 +76,19 @@ void	memory_allocation(char **args, char *av)
 		if (i > flag)
 		{
 			args[j] = malloc (sizeof(char) * (i - flag) + 1);
-			ft_strncpy(args[j++], &av[flag], i - flag);
+			if (!args[j])
+				free_array(args, j);
+			ft_strncpy(args[j], &av[flag], i - flag);
+			j++;
 		}
 	}
 	args[j] = NULL;
+}
+
+void	free_array(char **args, int j)
+{
+	while (j > 0)
+		free(args[--j]);
+	free(args);
+	return ;
 }
