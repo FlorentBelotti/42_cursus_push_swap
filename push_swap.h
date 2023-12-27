@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/26 16:26:26 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/27 10:36:19 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void	create_stack(t_list **stack_a, int val);
 	/* push_swap_split.c */
 
 char	*ft_strncpy(char *s1, char *s2, int n);
-int		count_words(char *str, char sep);
 char	**push_swap_split(char *av, char sep);
+int		count_words(char *str, char sep);
 void	memory_allocation(char **args, char *av);
 void	free_array(char **args, int j);
 

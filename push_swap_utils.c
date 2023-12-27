@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/26 16:37:01 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:03:57 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ int	ft_atoi(char *str)
 
 	while (str[i] == '+' || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	while (str[i] == '-')
 	{
-		sign = -sign;
+		sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
