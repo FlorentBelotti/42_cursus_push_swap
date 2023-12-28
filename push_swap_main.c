@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/28 15:37:35 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:22:23 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int	main(int ac, char **av)
 
 	i = 1;
 	data.lst_a = NULL;
-	if (ac == 1)
-		return (1);
 	if (ac == 2)
 	{
 		av = push_swap_split(av[1], ' ');
@@ -31,7 +29,8 @@ int	main(int ac, char **av)
 		val_to_stack(i, av, &data.lst_a);
 	else
 		write (1, "Error : invalid arguments\n", 26);
-	tiny_sort(&data);
+	if (ft_lstsize(&data.lst_a) <= 3)
+		tiny_sort(&data);
 	print_list(data.lst_a);
 	return (0);
 }

@@ -6,11 +6,14 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 10:36:08 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/28 15:44:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:48:09 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+	/* biggest_content : find the index of the node containing the biggest value
+	of the selected slot. */
 
 int	biggest_content(t_list **lst, int size)
 {
@@ -36,25 +39,34 @@ int	biggest_content(t_list **lst, int size)
 	return (max_index);
 }
 
+	/* tiny_sort : sort a maximum of 3 nodes depending on the position of the
+	biggest node value. */
+
 void	tiny_sort(t_data *data)
 {
-	if (ft_lstsize(&data->lst_a) != 3)
-		return ;
-	if (biggest_content(&data->lst_a, 3) == 1)
+	if (ft_lstsize(&data->lst_a) == 2)
 	{
-		ra(data);
 		if (biggest_content(&data->lst_a, 2) == 1)
 			sa(data);
 	}
-	if (biggest_content(&data->lst_a, 3) == 2)
+	if (ft_lstsize(&data->lst_a) == 3)
 	{
-		rra(data);
-		if (biggest_content(&data->lst_a, 2) == 1)
-			sa(data);
-	}
-	if (biggest_content(&data->lst_a, 3) == 3)
-	{
-		if (biggest_content(&data->lst_a, 2) == 1)
-			sa(data);
+		if (biggest_content(&data->lst_a, 3) == 1)
+		{
+			ra(data);
+			if (biggest_content(&data->lst_a, 2) == 1)
+				sa(data);
+		}
+		if (biggest_content(&data->lst_a, 3) == 2)
+		{
+			rra(data);
+			if (biggest_content(&data->lst_a, 2) == 1)
+				sa(data);
+		}
+		if (biggest_content(&data->lst_a, 3) == 3)
+		{
+			if (biggest_content(&data->lst_a, 2) == 1)
+				sa(data);
+		}
 	}
 }

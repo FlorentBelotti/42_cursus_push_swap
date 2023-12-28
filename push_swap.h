@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/28 14:58:19 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:19:30 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,12 @@ void	free_array(char **args, int j);
 
 int		biggest_content(t_list **lst_a, int size);
 void	tiny_sort(t_data *data);
+
+	/* sort_pivot */
+
+t_list	*define_pivot(t_list **lst);
+int		median_of_three(int a, int b, int c);
+t_list	*find_mid_node(t_list **lst);
 
 	/* test */
 
