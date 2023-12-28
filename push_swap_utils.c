@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/27 16:03:57 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:46:12 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,28 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+int	is_number(char **av, int i)
+{
+	int		j;
+
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] == ' ' || av[i][j] == '\t' || av[i][j] == '\n')
+				j++;
+			else if (av[i][j] == '-' &&
+			(av[i][j + 1] >= '0' && av[i][j + 1] <= '9'))
+				j++;
+			else if (av[i][j] >= '0' && av[i][j] <= '9')
+				j++;
+			else
+				return (0);
+		}
+		i++;
+	}
+	return (1);
 }

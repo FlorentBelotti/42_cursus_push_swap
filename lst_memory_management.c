@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/22 19:13:34 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:45:54 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,16 @@ void	free_list(t_list *head)
 		current = next;
 	}
 	return ;
+}
+
+void	val_to_stack(int i, char **av, t_list **lst_a)
+{
+	int		val;
+
+	while (av[i])
+	{
+		val = ft_atoi(av[i]);
+		create_stack(lst_a, val);
+		i++;
+	}
 }
