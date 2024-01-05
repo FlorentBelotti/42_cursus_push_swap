@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/28 17:19:30 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:13:47 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,17 @@
 typedef struct s_data {
 	struct s_list	*lst_a;
 	struct s_list	*lst_b;
+	int				quarter_1;
+	int				quarter_2;
+	int				quarter_3;
+	int				quarter_4;
 }	t_data;
 
 	/* list : structure of the piles. */
 
 typedef struct s_list {
 	int				content;
+	int				index;
 	struct s_list	*next;
 	struct s_list	*previous;
 }	t_list;
@@ -47,6 +52,8 @@ int		ft_lstsize(t_list **lst);
 t_list	*ft_lstlast(t_list **lst);
 int		ft_atoi(char *str);
 int		is_number(char **av, int i);
+//int		str_is_number_AND_FIT_INT_INT(char *str);
+
 
 	/* lst_operations : Contains functions called for stack manipulation. */
 
@@ -101,9 +108,14 @@ void	tiny_sort(t_data *data);
 
 	/* sort_pivot */
 
-t_list	*define_pivot(t_list **lst);
-int		median_of_three(int a, int b, int c);
-t_list	*find_mid_node(t_list **lst);
+int		define_index(t_data *data);
+int		is_smallest_node(t_data *data, t_list *node_to_check);
+void	divide_pile_into_four(t_data *data);
+
+	/* sort_repartition */
+
+void	partition(t_data *data);
+int		there_is_content_lesser_than_pivot(t_list *pile, int pivot);
 
 	/* test */
 

@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/27 16:45:54 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:26:47 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void create_stack(t_list **stack_a, int val)
 	if (!new_node)
 		return ;
 	new_node->content = val;
+	new_node->index = -1;
 	new_node->next = NULL;
 	new_node->previous = NULL;
 	if (*stack_a == NULL)

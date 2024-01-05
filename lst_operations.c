@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 09:38:47 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/12 18:06:48 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:42:07 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,16 @@ void	ft_lst_interchanger(t_list **src, t_list **dest)
 {
 	t_list	*src_first_node;
 	t_list	*src_second_node;
-	t_list	*dest_first_node;
 
-	if (ft_lstsize(src) < 1 || !src)
+	if (!src || !*src)
 		return ;
 	src_first_node = *src;
 	src_second_node = src_first_node->next;
-	dest_first_node = *dest;
-	src_first_node->next = dest_first_node;
-	src_first_node->previous = NULL;
-	src_second_node->previous = NULL;
-	*src = src_second_node;
+	src_first_node->next = *dest;
+	if (*dest)
+		(*dest)->previous = src_first_node;
 	*dest = src_first_node;
+	*src = src_second_node;
+	if (src_second_node)
+		src_second_node->previous = NULL;
 }

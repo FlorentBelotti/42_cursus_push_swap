@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:54:25 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/12 18:14:09 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:41:44 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Do nothing if lst_b is empty. */
 
 void	pa(t_data *data)
 {
-	ft_lst_interchanger(&(data->lst_b), &(data->lst_a));
+	ft_lst_interchanger(&(data->lst_a), &(data->lst_b));
 	write (1, "pa\n", 3);
 }
 
