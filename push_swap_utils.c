@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/27 16:46:12 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/01/07 22:04:52 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,22 @@ int	is_number(char **av, int i)
 				return (0);
 		}
 		i++;
+	}
+	return (1);
+}
+
+int	is_smallest_node(t_data *data, t_list *node_to_check)
+{
+	t_list	*current;
+
+	if (!data->lst_a || !node_to_check)
+		return (0);
+	current = data->lst_a;
+	while (current)
+	{
+		if (current->index == -1 && current->content < node_to_check->content)
+			return (0);
+		current = current->next;
 	}
 	return (1);
 }

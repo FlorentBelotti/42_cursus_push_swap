@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/01/03 16:13:47 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/01/07 22:24:24 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@
 typedef struct s_data {
 	struct s_list	*lst_a;
 	struct s_list	*lst_b;
-	int				quarter_1;
-	int				quarter_2;
-	int				quarter_3;
-	int				quarter_4;
+	int				partition_base;
+	int				partition_factor;
+	int				partition_nb_of_elements;
+	int				list_size;
 }	t_data;
 
 	/* list : structure of the piles. */
@@ -49,11 +49,10 @@ indicated .c files. */
 	troughout the project. */
 
 int		ft_lstsize(t_list **lst);
-t_list	*ft_lstlast(t_list **lst);
 int		ft_atoi(char *str);
 int		is_number(char **av, int i);
-//int		str_is_number_AND_FIT_INT_INT(char *str);
-
+int		is_smallest_node(t_data *data, t_list *node_to_check);
+t_list	*ft_lstlast(t_list **lst);
 
 	/* lst_operations : Contains functions called for stack manipulation. */
 
@@ -106,16 +105,13 @@ void	free_array(char **args, int j);
 int		biggest_content(t_list **lst_a, int size);
 void	tiny_sort(t_data *data);
 
-	/* sort_pivot */
+	/* sort_group */
 
-int		define_index(t_data *data);
-int		is_smallest_node(t_data *data, t_list *node_to_check);
-void	divide_pile_into_four(t_data *data);
-
-	/* sort_repartition */
-
-void	partition(t_data *data);
-int		there_is_content_lesser_than_pivot(t_list *pile, int pivot);
+void		define_index(t_data *data);
+int		calculate_number_of_partitions(t_data *data);
+void	push_n_partition_in_pile_b(t_data *data);
+void	push_inferior_index_into_pile_b(t_data *data, int index_max);
+int		there_is_inferior_index(t_data *data, int index_max);
 
 	/* test */
 
