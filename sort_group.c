@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_group.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:48:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/02 16:35:52 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:35:32 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,46 +77,45 @@ void	push_n_partition_in_pile_b(t_data *data)
 
 void	push_inferior_index_into_pile_b(t_data *data, int index_max)
 {
-	int	inferior_index_pos;
+	int	inferior_pos;
 
-	set_pile_a_order(data);
 	while (there_is_inferior_index(data, index_max))
 	{
 		if (data->lst_a->index <= index_max)
-		{
 			pb(data);
-			set_pile_a_order(data);
-		}
 		else
 		{
-			inferior_index_pos = first_inferior_index_pos(data, index_max);
-			printf("%d\n", inferior_index_pos);
-			choose_and_do_the_rotation(data, inferior_index_pos);
+			set_pile_a_order(data);
+			inferior_pos = first_inferior_index_pos(data, index_max);
+			choose_and_do_the_rotation(data, inferior_pos);
 		}
 	}
 }
 
-void	choose_and_do_the_rotation(t_data *data, int inferior_index_pos)
+void	choose_and_do_the_rotation(t_data *data, int inferior_pos)
 {
+	int	list_size;
 	int	mid_list_size;
+	int	steps;
 
-	printf("choose_and_do_the_rotation");
-	data->list_size = ft_lstsize(&data->lst_a);
-	mid_list_size = data->list_size / 2;
-	if (inferior_index_pos <= mid_list_size)
+	list_size = ft_lstsize(&data->lst_a);
+	mid_list_size = list_size / 2;
+	if (inferior_pos < mid_list_size)
 	{
-		while (inferior_index_pos > 0)
+		steps = inferior_pos - 1;
+		while (steps > 0)
 		{
 			ra(data);
-			inferior_index_pos--;
+			steps--;
 		}
 	}
-	if (inferior_index_pos > mid_list_size)
+	else
 	{
-		while (inferior_index_pos < data->list_size)
+		steps = list_size - inferior_pos + 1;
+		while (steps > 0)
 		{
 			rra(data);
-			inferior_index_pos++;
+			steps--;
 		}
 	}
 }
