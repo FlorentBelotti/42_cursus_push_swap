@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/01/07 22:24:24 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:13:59 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct s_data {
 	int				partition_base;
 	int				partition_factor;
 	int				partition_nb_of_elements;
+	int				start;
+	int				end;
+	int				partition_nb;
 	int				list_size;
 }	t_data;
 
@@ -38,6 +41,7 @@ typedef struct s_data {
 typedef struct s_list {
 	int				content;
 	int				index;
+	int				order;
 	struct s_list	*next;
 	struct s_list	*previous;
 }	t_list;
@@ -107,11 +111,20 @@ void	tiny_sort(t_data *data);
 
 	/* sort_group */
 
-void		define_index(t_data *data);
+void	define_index(t_data *data);
 int		calculate_number_of_partitions(t_data *data);
 void	push_n_partition_in_pile_b(t_data *data);
 void	push_inferior_index_into_pile_b(t_data *data, int index_max);
 int		there_is_inferior_index(t_data *data, int index_max);
+int		first_inferior_index_pos(t_data *data, int index_max);
+void	choose_and_do_the_rotation(t_data *data, int inferior_index_pos);
+
+
+	/* sort_pile_b */
+
+void	set_pile_b_order(t_data	*data);
+int		biggest_index_position_in_partition(t_data *data);
+void	set_pile_a_order(t_data	*data);
 
 	/* test */
 
