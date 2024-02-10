@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_pile_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:57:23 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/04 16:13:54 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:42:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	set_pile_a_order(t_data	*data)
 	cur = data->lst_a;
 	while (cur)
 	{
-		nb = nb + 1;
 		cur->order = nb;
+		nb = nb + 1;
 		cur = cur->next;
 	}
 }

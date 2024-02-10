@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_group.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:48:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/04 16:35:32 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:51:31 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	push_inferior_index_into_pile_b(t_data *data, int index_max)
 	}
 }
 
-void	choose_and_do_the_rotation(t_data *data, int inferior_pos)
+/* void	choose_and_do_the_rotation(t_data *data, int inferior_pos)
 {
 	int	list_size;
 	int	mid_list_size;
@@ -118,6 +118,23 @@ void	choose_and_do_the_rotation(t_data *data, int inferior_pos)
 			steps--;
 		}
 	}
+} */
+
+void	choose_and_do_the_rotation(t_data *data, int inferior_pos)
+{
+	int	list_size;
+	int	forward_steps;
+	int	backward_steps;
+
+	list_size = ft_lstsize(&data->lst_a);
+	backward_steps = list_size - inferior_pos;
+	forward_steps = inferior_pos;
+	if (forward_steps <= backward_steps)
+		while (forward_steps--)
+			ra(data);
+	else
+		while (backward_steps--)
+			rra(data);
 }
 
 int	first_inferior_index_pos(t_data *data, int index_max)
