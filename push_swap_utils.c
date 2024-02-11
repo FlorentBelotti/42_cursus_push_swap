@@ -6,13 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/01/07 22:04:52 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:46:04 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* ft_lstsize : iterate on a list to find its size "i" */
 
 int	ft_lstsize(t_list **lst)
 {
@@ -28,9 +26,6 @@ int	ft_lstsize(t_list **lst)
 	}
 	return (i);
 }
-
-/* ft_lstlast : return the last node of the linked list and update the previous
-pointer to the second_to_last */
 
 t_list	*ft_lstlast(t_list **lst)
 {
@@ -92,13 +87,13 @@ int	is_number(char **av, int i)
 	return (1);
 }
 
-int	is_smallest_node(t_data *data, t_list *node_to_check)
+int	is_smallest_node(t_list **pile, t_list *node_to_check)
 {
 	t_list	*current;
 
-	if (!data->lst_a || !node_to_check)
+	if (!pile || !node_to_check)
 		return (0);
-	current = data->lst_a;
+	current = *pile;
 	while (current)
 	{
 		if (current->index == -1 && current->content < node_to_check->content)

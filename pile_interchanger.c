@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_interchanger.c                                 :+:      :+:    :+:   */
+/*   pile_interchanger.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:54:25 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/01/03 14:41:44 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:48:33 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Do nothing if lst_b is empty. */
 
 void	pa(t_data *data)
 {
-	ft_lst_interchanger(&(data->lst_a), &(data->lst_b));
+	ft_lst_interchanger(&(data->lst_b), &(data->lst_a));
 	write (1, "pa\n", 3);
 }
 

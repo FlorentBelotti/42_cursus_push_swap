@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/01/27 16:46:22 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:11:46 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 	if (ft_lstsize(&data.lst_a) <= 3)
 		tiny_sort(&data);
 	else
-		push_n_partition_in_pile_b(&data);
+		push_n_partition(&data);
 	//biggest_pos = biggest_index_position_in_partition(&data);
 	return (0);
 }

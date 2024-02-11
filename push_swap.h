@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/02 16:13:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/11 02:33:09 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ indicated .c files. */
 int		ft_lstsize(t_list **lst);
 int		ft_atoi(char *str);
 int		is_number(char **av, int i);
-int		is_smallest_node(t_data *data, t_list *node_to_check);
+int		is_smallest_node(t_list **pile, t_list *node_to_check);
 t_list	*ft_lstlast(t_list **lst);
 
 	/* lst_operations : Contains functions called for stack manipulation. */
@@ -109,25 +109,30 @@ void	free_array(char **args, int j);
 int		biggest_content(t_list **lst_a, int size);
 void	tiny_sort(t_data *data);
 
+	/* sort_index */
+
+void	define_index(t_list **pile);
+int		find_max_index_pos(t_data *data);
+int		head_inferior_index_pos(t_data *data, int index_max);
+int		tail_inferior_index_pos(t_data *data, int index_max);
+int		there_is_inferior_index(t_data *data, int index_max);
+
 	/* sort_group */
 
-void	define_index(t_data *data);
 int		calculate_number_of_partitions(t_data *data);
-void	push_n_partition_in_pile_b(t_data *data);
+void	push_n_partition(t_data *data);
+void	push_superior_index_into_pile_a(t_data *data);
 void	push_inferior_index_into_pile_b(t_data *data, int index_max);
-int		there_is_inferior_index(t_data *data, int index_max);
-int		first_inferior_index_pos(t_data *data, int index_max);
-void	choose_and_do_the_rotation(t_data *data, int inferior_index_pos);
+int		there_is_index_in_range(t_data *data, int index_max, int range);
 
+	/* sort_pile */
 
-	/* sort_pile_b */
-
-void	set_pile_b_order(t_data	*data);
+void	set_pile_order(t_list	**pile);
 int		biggest_index_position_in_partition(t_data *data);
-void	set_pile_a_order(t_data	*data);
 
-	/* test */
+	/* sort_rotation */
 
-void	print_list(t_list *lst_a);
+void	choose_rotation_for_pile_b(t_data *data);
+void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos);
 
 #endif

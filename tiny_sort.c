@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 10:36:08 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:09 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/10 13:59:38 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-	/* biggest_content : find the index of the node containing the biggest value
-	of the selected slot. */
 
 int	biggest_content(t_list **lst, int size)
 {
@@ -38,9 +35,6 @@ int	biggest_content(t_list **lst, int size)
 	}
 	return (max_index);
 }
-
-	/* tiny_sort : sort a maximum of 3 nodes depending on the position of the
-	biggest node value. */
 
 void	tiny_sort(t_data *data)
 {
