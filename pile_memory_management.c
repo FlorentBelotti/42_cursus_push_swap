@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 14:18:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:16:26 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list	*create_node(int val)
 
 	/* create_stack */
 
-void create_stack(t_list **stack_a, int val)
+void	create_stack(t_list **stack_a, int val)
 {
 	t_list	*new_node;
 	t_list	*current;

@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 16:56:47 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:41:23 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list **lst)
 {
-	int	i;
+	int		i;
 	t_list	*current;
 
 	i = 0;
@@ -44,10 +44,13 @@ t_list	*ft_lstlast(t_list **lst)
 
 int	ft_atoi(char *str)
 {
-	int	i = 0;
-	int	sign = 1;
-	int	result = 0;
+	int	i;
+	int	sign;
+	int	result;
 
+	i = 0;
+	sign = 1;
+	result = 0;
 	while (str[i] == '+' || str[i] == ' ')
 		i++;
 	while (str[i] == '-')

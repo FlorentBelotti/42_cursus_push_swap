@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:26:39 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/26 16:21:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:36:28 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	memory_allocation(char **args, char *av)
 		{
 			args[j] = malloc (sizeof(char) * (i - flag) + 1);
 			if (!args[j])
-				free_array(args, j);
+				free_array(args);
 			ft_strncpy(args[j], &av[flag], i - flag);
 			j++;
 		}
@@ -85,10 +85,18 @@ void	memory_allocation(char **args, char *av)
 	args[j] = NULL;
 }
 
-void	free_array(char **args, int j)
+void	free_array(char **args)
 {
-	while (j > 0)
-		free(args[--j]);
+	int	j;
+
+	if (!args)
+		return ;
+	j = 0;
+	while (args[j])
+	{
+		free(args[j]);
+		j++;
+	}
 	free(args);
 	return ;
 }

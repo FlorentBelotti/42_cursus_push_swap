@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 17:02:21 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:40:11 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int ac, char **av)
 		choose_sort(&data);
 	else
 		write (1, "Error : inappropriate values\n", 29);
+	free_pile(&data);
 }
 
 void	choose_sort(t_data *data)
@@ -46,3 +47,8 @@ void	choose_sort(t_data *data)
 		push_n_partition(data);
 }
 
+void	free_pile(t_data *data)
+{
+	free_list(data->lst_a);
+	free_list(data->lst_b);
+}

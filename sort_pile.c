@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:57:23 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/10 18:25:18 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:41:55 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ int	biggest_index_position_in_partition(t_data *data)
 	}
 	return (biggest_pos);
 }
-

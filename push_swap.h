@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 16:27:18 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:38:15 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ indicated .c files. */
 	/* push_swap_main.c */
 
 void	choose_sort(t_data *data);
+void	free_pile(t_data *data);
+void	free_args(char **args, int ac);
 
 	/* push_swap_utils.c : some practical functions that will be used
 	troughout the project. */
@@ -106,7 +108,7 @@ char	*ft_strncpy(char *s1, char *s2, int n);
 char	**push_swap_split(char *av, char sep);
 int		count_words(char *str, char sep);
 void	memory_allocation(char **args, char *av);
-void	free_array(char **args, int j);
+void	free_array(char **args);
 
 	/* tiny_sort */
 
