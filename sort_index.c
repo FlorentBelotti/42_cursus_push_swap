@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:08:48 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 02:41:34 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/11 13:28:17 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,20 @@ int	there_is_inferior_index(t_data *data, int index_max)
 	while (current)
 	{
 		if (current->index <= index_max)
+			return (1);
+		current = current->next;
+	}
+	return (0);
+}
+
+int	there_is_index_max(t_data *data, int index_max)
+{
+	t_list	*current;
+
+	current = data->lst_b;
+	while (current)
+	{
+		if (current->index == index_max)
 			return (1);
 		current = current->next;
 	}

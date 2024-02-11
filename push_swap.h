@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 02:33:09 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:27:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ typedef struct s_list {
 
 /* Functions files : description of the functions can be found in the
 indicated .c files. */
+
+	/* push_swap_main.c */
+
+void	choose_sort(t_data *data);
 
 	/* push_swap_utils.c : some practical functions that will be used
 	troughout the project. */
@@ -112,18 +116,17 @@ void	tiny_sort(t_data *data);
 	/* sort_index */
 
 void	define_index(t_list **pile);
-int		find_max_index_pos(t_data *data);
 int		head_inferior_index_pos(t_data *data, int index_max);
 int		tail_inferior_index_pos(t_data *data, int index_max);
 int		there_is_inferior_index(t_data *data, int index_max);
+int		there_is_index_max(t_data *data, int index_max);
 
 	/* sort_group */
 
 int		calculate_number_of_partitions(t_data *data);
 void	push_n_partition(t_data *data);
-void	push_superior_index_into_pile_a(t_data *data);
+void	push_superior_index_into_pile_a(t_data *data, int index_max);
 void	push_inferior_index_into_pile_b(t_data *data, int index_max);
-int		there_is_index_in_range(t_data *data, int index_max, int range);
 
 	/* sort_pile */
 
@@ -132,7 +135,12 @@ int		biggest_index_position_in_partition(t_data *data);
 
 	/* sort_rotation */
 
-void	choose_rotation_for_pile_b(t_data *data);
+void	choose_rotation_for_pile_b(t_data *data, int head_pos);
 void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos);
+
+	/* error_check */
+
+int		check_limit(t_data *data);
+int		check_double(t_data *data);
 
 #endif

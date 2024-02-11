@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/10 13:47:38 by fbelotti          #+#    #+#              #
-#    Updated: 2024/02/10 13:59:01 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/02/11 15:45:57 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,15 @@ SRCS =	pile_interchanger.c \
 		pile_operations.c \
 		pile_swapper.c \
 		pile_swapper_2.c \
-		pile_tester.c \
 		push_swap_main.c \
 		push_swap_split.c \
 		push_swap_utils.c \
+		sort_rotation.c \
 		sort_group.c \
 		sort_index.c \
-		sort_pile_b.c \
+		sort_pile.c \
 		tiny_sort.c \
+		error_check.c \
 
 CC =	gcc
 RM =	rm -f
