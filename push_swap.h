@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 00:38:15 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 13:37:07 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ indicated .c files. */
 
 void	choose_sort(t_data *data);
 void	free_pile(t_data *data);
-void	free_args(char **args, int ac);
+void	check_pile(t_data *data);
+int		need_sort(t_data *data);
 
 	/* push_swap_utils.c : some practical functions that will be used
 	troughout the project. */
@@ -114,6 +115,7 @@ void	free_array(char **args);
 
 int		biggest_content(t_list **lst_a, int size);
 void	tiny_sort(t_data *data);
+void	sort_five_numbers(t_data *data);
 
 	/* sort_index */
 

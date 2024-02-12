@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 00:40:11 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/12 14:55:38 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,40 @@ int	main(int ac, char **av)
 		write (1, "Error : invalid arguments\n", 26);
 		return (0);
 	}
-	if (check_limit(&data) == 1 && check_double(&data) == 1)
-		choose_sort(&data);
+	check_pile(&data);
+	free_pile(&data);
+}
+
+void	check_pile(t_data *data)
+{
+	if (check_limit(data) == 1 && check_double(data) == 1)
+	{
+		if (need_sort(data) == 1)
+			choose_sort(data);
+	}
 	else
 		write (1, "Error : inappropriate values\n", 29);
-	free_pile(&data);
+}
+
+int	need_sort(t_data *data)
+{
+	t_list	*current;
+
+	current = data->lst_a;
+	while (current && current->next)
+	{
+		if (current->content > current->next->content)
+			return (1);
+		current = current->next;
+	}
+	return (0);
 }
 
 void	choose_sort(t_data *data)
 {
-	if (ft_lstsize(&data->lst_a) <= 3)
+	if (ft_lstsize(&data->lst_a) == 5)
+		sort_five_numbers(data);
+	else if (ft_lstsize(&data->lst_a) <= 3)
 		tiny_sort(data);
 	else
 		push_n_partition(data);
