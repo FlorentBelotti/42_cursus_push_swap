@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 14:55:38 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:15:58 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	check_pile(&data);
+	free_array(&av[1]);
+	free(av[1]);
 	free_pile(&data);
 }
 
