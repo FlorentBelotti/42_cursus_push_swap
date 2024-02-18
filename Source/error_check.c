@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 15:18:13 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 16:32:14 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:52:43 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_limit(t_data *data)
 {

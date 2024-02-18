@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   one_stack_operations.c                             :+:      :+:    :+:   */
+/*   pile_swapper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:35 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/10 18:25:01 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:13 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /* sa (swap a) : Exchanges the first two nodes of the pile "lst_a" */
 

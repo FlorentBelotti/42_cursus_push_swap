@@ -3,27 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
+#    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/12 16:48:03 by fbelotti          #+#    #+#              #
-#    Updated: 2024/02/12 16:48:07 by fbelotti         ###   ########.fr        #
+#    Created: 2024/02/10 13:47:38 by fbelotti          #+#    #+#              #
+#    Updated: 2024/02/18 14:50:56 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	pile_interchanger.c \
-		pile_memory_management.c \
-		pile_operations.c \
-		pile_swapper.c \
-		pile_swapper_2.c \
-		push_swap_main.c \
-		push_swap_split.c \
-		push_swap_utils.c \
-		sort_rotation.c \
-		sort_group.c \
-		sort_index.c \
-		sort_pile.c \
-		tiny_sort.c \
-		error_check.c \
+SRCS =	./Source/pile_interchanger.c \
+		./Source/pile_memory_management.c \
+		./Source/pile_operations.c \
+		./Source/pile_swapper.c \
+		./Source/pile_swapper_2.c \
+		./Source/push_swap_main.c \
+		./Source/push_swap_split.c \
+		./Source/push_swap_utils.c \
+		./Source/sort_rotation.c \
+		./Source/sort_group.c \
+		./Source/sort_index.c \
+		./Source/sort_pile.c \
+		./Source/tiny_sort.c \
+		./Source/error_check.c \
 
 CC =	gcc
 RM =	rm -f

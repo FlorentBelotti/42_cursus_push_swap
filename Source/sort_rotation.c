@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:33:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/11 13:39:14 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	choose_rotation_for_pile_b(t_data *data, int head_pos)
 {

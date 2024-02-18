@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 00:16:26 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:02 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 #include <stdio.h>
 
 	/* create_node : function used to create the nodes of a list. */

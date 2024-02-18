@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   one_stack_operations_2.c                           :+:      :+:    :+:   */
+/*   pile_swapper_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:47:45 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/12/10 17:48:13 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:09 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /* rrb (reverse rotate b) : Shifts all elements of the pile "lst_b" one position
 down. The last element becomes the first. */

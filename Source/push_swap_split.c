@@ -6,12 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:26:39 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 00:36:28 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:28 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "stdio.h"
+#include "../push_swap.h"
 
 char	*ft_strncpy(char *s1, char *s2, int n)
 {

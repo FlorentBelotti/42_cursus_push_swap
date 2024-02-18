@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:57:23 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 00:41:55 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:45 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	set_pile_order(t_list	**pile)
 {

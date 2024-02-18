@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 00:41:23 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:33 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_lstsize(t_list **lst)
 {
@@ -89,6 +89,7 @@ int	is_number(char **av, int i)
 	}
 	return (1);
 }
+
 
 int	is_smallest_node(t_list **pile, t_list *node_to_check)
 {

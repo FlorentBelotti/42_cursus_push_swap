@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_group.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:48:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/12 15:11:46 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:53:37 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	calculate_number_of_partitions(t_data *data)
 {
@@ -18,7 +18,7 @@ int	calculate_number_of_partitions(t_data *data)
 	int	partition_nb;
 
 	data->partition_base = 3;
-	data->partition_factor = 28;
+	data->partition_factor = 30;
 	data->list_size = ft_lstsize(&data->lst_a);
 	if (data->list_size <= data->partition_factor)
 		return (data->partition_base);

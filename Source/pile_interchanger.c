@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:54:25 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/10 16:48:33 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/18 14:52:57 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /* ss : sa and sb in the same time */
 
