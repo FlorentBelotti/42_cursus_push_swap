@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pile_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 09:38:47 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/18 14:53:05 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/19 09:02:55 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-/* handle_stack.c : Contains functions called for stack manipulation. */
-
-	/* ft_swap : exchange position of the first two nodes. */
 
 void	ft_swap_lst(t_list **lst)
 {
@@ -30,8 +26,6 @@ void	ft_swap_lst(t_list **lst)
 	second->next = first;
 }
 
-	/* ft_lst_upwards : the first node become the last node. */
-
 void	ft_lst_upward(t_list **lst)
 {
 	t_list	*first_to_last;
@@ -45,8 +39,6 @@ void	ft_lst_upward(t_list **lst)
 	second_to_last->next = first_to_last;
 	first_to_last->next = NULL;
 }
-
-	/* ft_lst_down : the last node become the first node. */
 
 void	ft_lst_down(t_list **lst)
 {
@@ -65,9 +57,6 @@ void	ft_lst_down(t_list **lst)
 		*lst = last_to_first;
 	}
 }
-
-	/* ft_lst_interchanger : the first node of src become the first node
-	of dest. The second node of src become the first node of src. */
 
 void	ft_lst_interchanger(t_list **src, t_list **dest)
 {

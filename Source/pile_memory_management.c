@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pile_memory_management.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/18 14:53:02 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/19 09:02:36 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdio.h>
-
-	/* create_node : function used to create the nodes of a list. */
 
 t_list	*create_node(int val)
 {
@@ -27,8 +25,6 @@ t_list	*create_node(int val)
 	new_node->previous = NULL;
 	return (new_node);
 }
-
-	/* create_stack */
 
 void	create_stack(t_list **stack_a, int val)
 {
