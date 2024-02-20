@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/19 11:07:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:39:42 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,6 @@ void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos);
 
 int		check_limit(t_data *data);
 int		check_double(t_data *data);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

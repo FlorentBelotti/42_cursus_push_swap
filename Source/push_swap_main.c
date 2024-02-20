@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/20 15:36:54 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:40:46 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	main(int ac, char **av)
 
 void	sort_or_error(t_data *data)
 {
-	if (check_limit(data) == 1 && check_double(data) == 1)
+	if (check_double(data) == 1)
 		choose_sort(data);
 	else
-		write (1, "Error : inappropriate values\n", 29);
+		write (1, "Error : double detected\n", 24);
 }
 
 void	choose_sort(t_data *data)

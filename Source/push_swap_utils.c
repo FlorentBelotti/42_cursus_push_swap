@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/18 14:53:33 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:55:08 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ t_list	*ft_lstlast(t_list **lst)
 
 int	ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int			i;
+	int			sign;
+	long long	result;
 
 	i = 0;
 	sign = 1;
@@ -63,7 +63,10 @@ int	ft_atoi(char *str)
 		result = 10 * result + str[i] - '0';
 		i++;
 	}
-	return (result * sign);
+	result = result * sign;
+	if (result < -2147483648 || result > 2147483647)
+		return (0);
+	return ((int)result);
 }
 
 int	is_number(char **av, int i)
@@ -89,7 +92,6 @@ int	is_number(char **av, int i)
 	}
 	return (1);
 }
-
 
 int	is_smallest_node(t_list **pile, t_list *node_to_check)
 {
