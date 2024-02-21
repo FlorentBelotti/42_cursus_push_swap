@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:39:42 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/21 12:15:09 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 
 	/* data : contains the piles and the variables. */
 
-typedef struct s_data {
+typedef struct s_data
+{
 	struct s_list	*lst_a;
 	struct s_list	*lst_b;
 	int				partition_base;
@@ -38,7 +39,8 @@ typedef struct s_data {
 
 	/* list : structure of the piles. */
 
-typedef struct s_list {
+typedef struct s_list
+{
 	int				content;
 	int				index;
 	int				order;
