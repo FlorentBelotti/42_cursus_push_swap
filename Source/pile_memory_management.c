@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pile_memory_management.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 12:42:08 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:46:01 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,8 @@ void	free_list(t_list *head)
 	return ;
 }
 
-void	val_to_stack(int i, char **av, t_list **lst_a)
+void	val_to_stack(int i, char **av, t_list **lst_a, t_data *data)
 {
-	t_data	data;
 	int		val;
 
 	while (av[i])
@@ -76,7 +75,7 @@ void	val_to_stack(int i, char **av, t_list **lst_a)
 		if (val == 0 && ft_strcmp("0", av[i]))
 		{
 			write (1, "Error : out of bound\n", 22);
-			if (data.split_flag == 1)
+			if (data->split_flag == 1)
 				free_array(av);
 			exit (0);
 		}

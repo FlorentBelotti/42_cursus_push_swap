@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 12:40:35 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:48:04 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		if (is_number(av, i))
-			av = push_swap_split(av[1], ' ');
+			av = push_swap_split(av[1], ' ', &data);
 		i = 0;
 	}
 	if (is_number(av, i))
-		val_to_stack(i, av, &data.lst_a);
+		val_to_stack(i, av, &data.lst_a, &data);
 	else
 	{
 		write (1, "Error : invalid arguments\n", 26);

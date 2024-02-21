@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 12:40:17 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:47:21 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,12 @@ void	rrb(t_data *data);
 void	free_list(t_list *head);
 t_list	*create_node(int val);
 void	create_stack(t_list **stack_a, int val);
-void	val_to_stack(int i, char **av, t_list **lst_a);
+void	val_to_stack(int i, char **av, t_list **lst_a, t_data *data);
 
 	/* push_swap_split.c */
 
 char	*ft_strncpy(char *s1, char *s2, int n);
-char	**push_swap_split(char *av, char sep);
+char	**push_swap_split(char *av, char sep, t_data *data);
 int		count_words(char *str, char sep);
 void	memory_allocation(char **args, char *av);
 void	free_array(char **args);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:26:39 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 12:41:21 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:51:05 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,14 @@ int	count_words(char *str, char sep)
 	return (word_nb);
 }
 
-char	**push_swap_split(char *av, char sep)
+char	**push_swap_split(char *av, char sep, t_data *data)
 {
-	t_data	data;
 	int		word_nb;
 	char	**args;
 
 	if (!av)
 		return (NULL);
-	data.split_flag = 1;
+	data->split_flag = 1;
 	word_nb = count_words(av, sep);
 	args = malloc (sizeof(char *) * (word_nb + 1));
 	if (!args)
