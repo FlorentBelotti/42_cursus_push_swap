@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pile_memory_management.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:48:49 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/21 12:25:20 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	val_to_stack(int i, char **av, t_list **lst_a)
 		if (val == 0 && ft_strcmp("0", av[i]))
 		{
 			write (1, "Error : out of bound\n", 22);
+			free_array(av);
 			exit (0);
 		}
 		create_stack(lst_a, val);
