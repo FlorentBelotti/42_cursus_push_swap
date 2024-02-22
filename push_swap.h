@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 13:47:21 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:58:15 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void	free_array(char **args);
 int		biggest_content(t_list **lst_a, int size);
 void	tiny_sort(t_data *data);
 void	sort_five_numbers(t_data *data);
+int		find_smallest_node_pos(t_data *data);
 
 	/* sort_index */
 
@@ -144,6 +145,7 @@ int		biggest_index_position_in_partition(t_data *data);
 
 void	choose_rotation_for_pile_b(t_data *data, int head_pos);
 void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos);
+void	do_rotation_for_five(t_data *data);
 
 	/* error_check */
 

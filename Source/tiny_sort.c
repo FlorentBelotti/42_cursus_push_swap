@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 10:36:08 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/19 11:07:30 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:55:30 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,12 @@ void	sort_five_numbers(t_data *data)
 
 	while (ft_lstsize(&data->lst_a) > 3)
 	{
+		set_pile_order(&data->lst_a);
 		current = data->lst_a;
 		if (is_smallest_node(&data->lst_a, current))
 			pb(data);
-		ra(data);
+		else
+			do_rotation_for_five(data);
 	}
 	tiny_sort(data);
 	current = data->lst_b;
@@ -82,4 +84,18 @@ void	sort_five_numbers(t_data *data)
 		rb(data);
 	while (ft_lstsize(&data->lst_b) > 0)
 		pa(data);
+}
+
+int	find_smallest_node_pos(t_data *data)
+{
+	t_list	*current;
+
+	current = data->lst_a;
+	while (current)
+	{
+		if (is_smallest_node(&data->lst_a, current))
+			return (current->order);
+		current = current->next;
+	}
+	return (0);
 }

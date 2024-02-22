@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_rotation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:33:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/18 14:53:48 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:14:47 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,25 @@ void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos)
 	else
 		while (tail_steps--)
 			rra(data);
+}
+
+void	do_rotation_for_five(t_data *data)
+{
+	int	steps;
+	int	small_pos;
+
+	set_pile_order(&data->lst_a);
+	small_pos = find_smallest_node_pos(data);
+	if (small_pos > ft_lstsize(&data->lst_a) / 2)
+	{
+		steps = ft_lstsize(&data->lst_a) - small_pos + 1;
+		while (--steps)
+			rra(data);
+	}
+	else
+	{
+		steps = small_pos;
+		while (steps--)
+			ra(data);
+	}
 }
