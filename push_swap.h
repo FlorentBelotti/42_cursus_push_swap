@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:47:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/22 17:58:15 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/23 15:52:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_data
 	int				partition_nb;
 	int				list_size;
 	int				split_flag;
+	int				index;
 }	t_data;
 
 	/* list : structure of the piles. */
@@ -105,6 +106,7 @@ void	free_list(t_list *head);
 t_list	*create_node(int val);
 void	create_stack(t_list **stack_a, int val);
 void	val_to_stack(int i, char **av, t_list **lst_a, t_data *data);
+void	set_base_value(t_data *data);
 
 	/* push_swap_split.c */
 

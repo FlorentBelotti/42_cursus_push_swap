@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 13:48:04 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:00:06 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 int	main(int ac, char **av)
 {
-	int		i;
 	t_data	data;
 
-	i = 1;
-	data.lst_a = NULL;
-	data.lst_b = NULL;
-	data.split_flag = 0;
+	if (ac < 2 || !av[1][0])
+		return (0);
+	set_base_value(&data);
 	if (ac == 2)
 	{
-		if (is_number(av, i))
+		if (is_number(av, data.index))
 			av = push_swap_split(av[1], ' ', &data);
-		i = 0;
+		data.index = 0;
 	}
-	if (is_number(av, i))
-		val_to_stack(i, av, &data.lst_a, &data);
+	if (is_number(av, data.index))
+		val_to_stack(data.index, av, &data.lst_a, &data);
 	else
 	{
-		write (1, "Error : invalid arguments\n", 26);
+		write (2, "Error : invalid arguments\n", 26);
 		return (0);
 	}
 	sort_or_error(&data);
 	free_pile(&data);
-	if (i == 0)
+	if (data.index == 0)
 		free_array(av);
 }
 
@@ -45,7 +43,7 @@ void	sort_or_error(t_data *data)
 	if (check_double(data) == 1)
 		choose_sort(data);
 	else
-		write (1, "Error : double detected\n", 24);
+		write (2, "Error : double detected\n", 24);
 }
 
 void	choose_sort(t_data *data)
