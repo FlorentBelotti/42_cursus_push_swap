@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   sort_pile.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:57:23 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/18 14:53:45 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-void	set_pile_order(t_list	**pile)
+void set_pile_order(t_list **pile)
 {
-	int		nb;
-	t_list	*cur;
+	int nb;
+	t_list *cur;
 
 	nb = 0;
 	cur = *pile;
@@ -27,11 +27,11 @@ void	set_pile_order(t_list	**pile)
 	}
 }
 
-int	biggest_index_position_in_partition(t_data *data)
+int biggest_index_position_in_partition(t_data *data)
 {
-	t_list	*cur;
-	int		biggest_pos;
-	int		biggest_index;
+	t_list *cur;
+	int biggest_pos;
+	int biggest_index;
 
 	set_pile_order(&(data->lst_b));
 	cur = data->lst_b;

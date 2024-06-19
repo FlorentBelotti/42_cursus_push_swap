@@ -6,16 +6,16 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:48:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/23 16:21:28 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-int	calculate_number_of_partitions(t_data *data)
+int calculate_number_of_partitions(t_data *data)
 {
-	int	additional_partitions;
-	int	partition_nb;
+	int additional_partitions;
+	int partition_nb;
 
 	data->partition_base = 3;
 	data->partition_factor = 50;
@@ -24,19 +24,17 @@ int	calculate_number_of_partitions(t_data *data)
 		return (data->partition_base);
 	else
 	{
-		additional_partitions = (data->list_size - data->partition_factor)
-			/ data->partition_factor;
-		if ((data->list_size - data->partition_factor)
-			% data->partition_factor != 0)
+		additional_partitions = (data->list_size - data->partition_factor) / data->partition_factor;
+		if ((data->list_size - data->partition_factor) % data->partition_factor != 0)
 			additional_partitions++;
 	}
 	partition_nb = data->partition_base + additional_partitions;
 	return (partition_nb);
 }
 
-void	push_n_partition(t_data *data)
+void push_n_partition(t_data *data)
 {
-	int	index_max;
+	int index_max;
 
 	define_index(&data->lst_a);
 	data->partition_nb = calculate_number_of_partitions(data);
@@ -54,9 +52,9 @@ void	push_n_partition(t_data *data)
 	}
 }
 
-int	superior_index_pos(t_data *data, int index_max)
+int superior_index_pos(t_data *data, int index_max)
 {
-	t_list	*current;
+	t_list *current;
 
 	current = data->lst_b;
 	while (current)
@@ -68,9 +66,9 @@ int	superior_index_pos(t_data *data, int index_max)
 	return (0);
 }
 
-void	push_superior_index_into_pile_a(t_data *data, int index_max)
+void push_superior_index_into_pile_a(t_data *data, int index_max)
 {
-	int	head_pos;
+	int head_pos;
 
 	while (there_is_index_max(data, index_max))
 	{
@@ -85,10 +83,10 @@ void	push_superior_index_into_pile_a(t_data *data, int index_max)
 	}
 }
 
-void	push_inferior_index_into_pile_b(t_data *data, int index_max)
+void push_inferior_index_into_pile_b(t_data *data, int index_max)
 {
-	int	head_pos;
-	int	tail_pos;
+	int head_pos;
+	int tail_pos;
 
 	while (there_is_inferior_index(data, index_max))
 	{

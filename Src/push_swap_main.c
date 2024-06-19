@@ -6,15 +6,15 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:08:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/23 16:00:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	t_data	data;
+	t_data data;
 
 	if (ac < 2 || !av[1][0])
 		return (0);
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 		val_to_stack(data.index, av, &data.lst_a, &data);
 	else
 	{
-		write (2, "Error : invalid arguments\n", 26);
+		write(2, "Error : invalid arguments\n", 26);
 		return (0);
 	}
 	sort_or_error(&data);
@@ -38,15 +38,15 @@ int	main(int ac, char **av)
 		free_array(av);
 }
 
-void	sort_or_error(t_data *data)
+void sort_or_error(t_data *data)
 {
 	if (check_double(data) == 1)
 		choose_sort(data);
 	else
-		write (2, "Error : double detected\n", 24);
+		write(2, "Error : double detected\n", 24);
 }
 
-void	choose_sort(t_data *data)
+void choose_sort(t_data *data)
 {
 	if (is_not_sorted(data))
 	{
@@ -59,9 +59,9 @@ void	choose_sort(t_data *data)
 	}
 }
 
-int	is_not_sorted(t_data *data)
+int is_not_sorted(t_data *data)
 {
-	t_list	*current;
+	t_list *current;
 
 	current = data->lst_a;
 	while (current && current->next)
@@ -73,7 +73,7 @@ int	is_not_sorted(t_data *data)
 	return (0);
 }
 
-void	free_pile(t_data *data)
+void free_pile(t_data *data)
 {
 	free_list(data->lst_a);
 	free_list(data->lst_b);

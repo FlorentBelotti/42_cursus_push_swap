@@ -6,18 +6,18 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 10:36:08 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/22 17:55:30 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-int	biggest_content(t_list **lst, int size)
+int biggest_content(t_list **lst, int size)
 {
-	t_list	*temp;
-	int		max;
-	int		max_index;
-	int		index;
+	t_list *temp;
+	int max;
+	int max_index;
+	int index;
 
 	max = (*lst)->content;
 	temp = *lst;
@@ -36,7 +36,7 @@ int	biggest_content(t_list **lst, int size)
 	return (max_index);
 }
 
-void	tiny_sort(t_data *data)
+void tiny_sort(t_data *data)
 {
 	if (ft_lstsize(&data->lst_a) == 2)
 	{
@@ -65,9 +65,9 @@ void	tiny_sort(t_data *data)
 	}
 }
 
-void	sort_five_numbers(t_data *data)
+void sort_five_numbers(t_data *data)
 {
-	t_list	*current;
+	t_list *current;
 
 	while (ft_lstsize(&data->lst_a) > 3)
 	{
@@ -86,9 +86,9 @@ void	sort_five_numbers(t_data *data)
 		pa(data);
 }
 
-int	find_smallest_node_pos(t_data *data)
+int find_smallest_node_pos(t_data *data)
 {
-	t_list	*current;
+	t_list *current;
 
 	current = data->lst_a;
 	while (current)

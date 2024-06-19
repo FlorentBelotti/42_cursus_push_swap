@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 15:18:13 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:39:20 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:27:12 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
 int	check_double(t_data *data)
 {

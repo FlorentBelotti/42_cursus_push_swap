@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:26:39 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/21 13:51:05 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-char	*ft_strncpy(char *s1, char *s2, int n)
+char *ft_strncpy(char *s1, char *s2, int n)
 {
-	int	i;
+	int i;
 
 	i = -1;
 	while (s2[++i] && i < n)
@@ -23,10 +23,10 @@ char	*ft_strncpy(char *s1, char *s2, int n)
 	return (s1);
 }
 
-int	count_words(char *str, char sep)
+int count_words(char *str, char sep)
 {
-	int	word_nb;
-	int	i;
+	int word_nb;
+	int i;
 
 	word_nb = 0;
 	i = 0;
@@ -42,27 +42,27 @@ int	count_words(char *str, char sep)
 	return (word_nb);
 }
 
-char	**push_swap_split(char *av, char sep, t_data *data)
+char **push_swap_split(char *av, char sep, t_data *data)
 {
-	int		word_nb;
-	char	**args;
+	int word_nb;
+	char **args;
 
 	if (!av)
 		return (NULL);
 	data->split_flag = 1;
 	word_nb = count_words(av, sep);
-	args = malloc (sizeof(char *) * (word_nb + 1));
+	args = malloc(sizeof(char *) * (word_nb + 1));
 	if (!args)
 		return (NULL);
 	memory_allocation(args, av);
 	return (args);
 }
 
-void	memory_allocation(char **args, char *av)
+void memory_allocation(char **args, char *av)
 {
-	int	i;
-	int	j;
-	int	flag;
+	int i;
+	int j;
+	int flag;
 
 	j = 0;
 	i = 0;
@@ -75,7 +75,7 @@ void	memory_allocation(char **args, char *av)
 			i++;
 		if (i > flag)
 		{
-			args[j] = malloc (sizeof(char) * (i - flag) + 1);
+			args[j] = malloc(sizeof(char) * (i - flag) + 1);
 			if (!args[j])
 				free_array(args);
 			ft_strncpy(args[j], &av[flag], i - flag);
@@ -85,12 +85,12 @@ void	memory_allocation(char **args, char *av)
 	args[j] = NULL;
 }
 
-void	free_array(char **args)
+void free_array(char **args)
 {
-	int	j;
+	int j;
 
 	if (!args)
-		return ;
+		return;
 	j = 0;
 	while (args[j])
 	{
@@ -98,5 +98,5 @@ void	free_array(char **args)
 		j++;
 	}
 	free(args);
-	return ;
+	return;
 }

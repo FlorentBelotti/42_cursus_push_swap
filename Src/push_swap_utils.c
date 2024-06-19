@@ -6,16 +6,16 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:48:22 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:55:08 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-int	ft_lstsize(t_list **lst)
+int ft_lstsize(t_list **lst)
 {
-	int		i;
-	t_list	*current;
+	int i;
+	t_list *current;
 
 	i = 0;
 	current = *lst;
@@ -27,9 +27,9 @@ int	ft_lstsize(t_list **lst)
 	return (i);
 }
 
-t_list	*ft_lstlast(t_list **lst)
+t_list *ft_lstlast(t_list **lst)
 {
-	t_list	*temp;
+	t_list *temp;
 
 	if (!lst)
 		return (NULL);
@@ -42,11 +42,11 @@ t_list	*ft_lstlast(t_list **lst)
 	return (temp);
 }
 
-int	ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-	int			i;
-	int			sign;
-	long long	result;
+	int i;
+	int sign;
+	long long result;
 
 	i = 0;
 	sign = 1;
@@ -69,9 +69,9 @@ int	ft_atoi(char *str)
 	return ((int)result);
 }
 
-int	is_number(char **av, int i)
+int is_number(char **av, int i)
 {
-	int		j;
+	int j;
 
 	while (av[i])
 	{
@@ -81,7 +81,7 @@ int	is_number(char **av, int i)
 			if (av[i][j] == ' ' || av[i][j] == '\t' || av[i][j] == '\n')
 				j++;
 			else if (av[i][j] == '-' &&
-			(av[i][j + 1] >= '0' && av[i][j + 1] <= '9'))
+					 (av[i][j + 1] >= '0' && av[i][j + 1] <= '9'))
 				j++;
 			else if (av[i][j] >= '0' && av[i][j] <= '9')
 				j++;
@@ -93,9 +93,9 @@ int	is_number(char **av, int i)
 	return (1);
 }
 
-int	is_smallest_node(t_list **pile, t_list *node_to_check)
+int is_smallest_node(t_list **pile, t_list *node_to_check)
 {
-	t_list	*current;
+	t_list *current;
 
 	if (!pile || !node_to_check)
 		return (0);

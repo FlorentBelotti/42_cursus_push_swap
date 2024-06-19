@@ -6,17 +6,17 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:33:28 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/22 18:14:47 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
-void	choose_rotation_for_pile_b(t_data *data, int head_pos)
+void choose_rotation_for_pile_b(t_data *data, int head_pos)
 {
-	int	list_size;
-	int	head_steps;
-	int	tail_steps;
+	int list_size;
+	int head_steps;
+	int tail_steps;
 
 	list_size = ft_lstsize(&data->lst_b);
 	head_steps = head_pos;
@@ -31,11 +31,11 @@ void	choose_rotation_for_pile_b(t_data *data, int head_pos)
 			rrb(data);
 }
 
-void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos)
+void choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos)
 {
-	int	list_size;
-	int	head_steps;
-	int	tail_steps;
+	int list_size;
+	int head_steps;
+	int tail_steps;
 
 	list_size = ft_lstsize(&data->lst_a);
 	head_steps = head_pos;
@@ -50,10 +50,10 @@ void	choose_rotation_for_pile_a(t_data *data, int head_pos, int tail_pos)
 			rra(data);
 }
 
-void	do_rotation_for_five(t_data *data)
+void do_rotation_for_five(t_data *data)
 {
-	int	steps;
-	int	small_pos;
+	int steps;
+	int small_pos;
 
 	set_pile_order(&data->lst_a);
 	small_pos = find_smallest_node_pos(data);

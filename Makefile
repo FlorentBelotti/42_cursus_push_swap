@@ -3,45 +3,62 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/10 13:47:38 by fbelotti          #+#    #+#              #
-#    Updated: 2024/02/18 14:50:56 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/06/19 14:30:21 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	./Source/pile_interchanger.c \
-		./Source/pile_memory_management.c \
-		./Source/pile_operations.c \
-		./Source/pile_swapper.c \
-		./Source/pile_swapper_2.c \
-		./Source/push_swap_main.c \
-		./Source/push_swap_split.c \
-		./Source/push_swap_utils.c \
-		./Source/sort_rotation.c \
-		./Source/sort_group.c \
-		./Source/sort_index.c \
-		./Source/sort_pile.c \
-		./Source/tiny_sort.c \
-		./Source/error_check.c \
+NAME = push_swap
+AUTHOR = Florent Belotti
 
-CC =	gcc
-RM =	rm -f
-CFLAGS = -Wall -Wextra -Werror -g
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+DEBUG_FLAGS = -g -O0
 
-NAME =	push_swap
+SRCDIR = Src
+INCDIR = Includes
+OBJDIR = Obj
 
-OBJS =	$(SRCS:.c=.o)
+SRC = $(shell find $(SRCDIR) -name \*.c -type f -print)
 
-${NAME} : $(OBJS)
-		$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+OBJ = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 
-clean :
-		$(RM) $(OBJS)
+DEPS = $(OBJ:.o=.d)
 
-fclean : clean
-		$(RM) $(NAME)
+INCLUDES = -I$(INCDIR)
 
-re : fclean $(NAME)
+all: intro $(NAME)
 
-.PHONY: all clean fclean re
+intro:
+	@echo "\n==================================="
+	@echo "Compiling:	$(NAME)"
+	@echo "Author:		$(AUTHOR)"
+	@echo "===================================\n"
+
+$(NAME): $(OBJ)
+	@ar rcs $@ $(OBJ)
+	@echo "\npush_swap:	ready to run.\n"
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/push_swap.h
+	@mkdir -p $(OBJDIR)
+	@echo push_swap:	Src:	compiling file $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
+
+-include $(DEPS)
+
+clean:
+	@echo "push_swap: clean: Cleaning object files..."
+	@rm -rf $(OBJDIR)
+
+fclean: clean
+	@echo "push_swap: fclean: Cleaning all build files..."
+	@rm -f $(NAME)
+
+re: fclean all
+
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: re
+
+.PHONY: all clean fclean re debug intro

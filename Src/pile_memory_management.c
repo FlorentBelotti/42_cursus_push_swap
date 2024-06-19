@@ -6,18 +6,18 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:12:15 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/02/23 16:00:49 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:29:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 #include <stdio.h>
 
-t_list	*create_node(int val)
+t_list *create_node(int val)
 {
-	t_list	*new_node;
+	t_list *new_node;
 
-	new_node = malloc (sizeof(t_list));
+	new_node = malloc(sizeof(t_list));
 	if (!new_node)
 		return (0);
 	new_node->content = val;
@@ -26,14 +26,14 @@ t_list	*create_node(int val)
 	return (new_node);
 }
 
-void	create_stack(t_list **stack_a, int val)
+void create_stack(t_list **stack_a, int val)
 {
-	t_list	*new_node;
-	t_list	*current;
+	t_list *new_node;
+	t_list *current;
 
-	new_node = malloc (sizeof(t_list));
+	new_node = malloc(sizeof(t_list));
 	if (!new_node)
-		return ;
+		return;
 	new_node->content = val;
 	new_node->index = -1;
 	new_node->next = NULL;
@@ -50,41 +50,41 @@ void	create_stack(t_list **stack_a, int val)
 	}
 }
 
-void	free_list(t_list *head)
+void free_list(t_list *head)
 {
-	t_list	*current;
-	t_list	*next;
+	t_list *current;
+	t_list *next;
 
 	current = head;
 	while (current != NULL)
 	{
 		next = current->next;
-		free (current);
+		free(current);
 		current = next;
 	}
-	return ;
+	return;
 }
 
-void	val_to_stack(int i, char **av, t_list **lst_a, t_data *data)
+void val_to_stack(int i, char **av, t_list **lst_a, t_data *data)
 {
-	int		val;
+	int val;
 
 	while (av[i])
 	{
 		val = ft_atoi(av[i]);
 		if (val == 0 && ft_strcmp("0", av[i]))
 		{
-			write (2, "Error : out of bound\n", 22);
+			write(2, "Error : out of bound\n", 22);
 			if (data->split_flag == 1)
 				free_array(av);
-			exit (0);
+			exit(0);
 		}
 		create_stack(lst_a, val);
 		i++;
 	}
 }
 
-void	set_base_value(t_data *data)
+void set_base_value(t_data *data)
 {
 	data->index = 1;
 	data->lst_a = NULL;
