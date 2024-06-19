@@ -6,143 +6,65 @@
 </head>
 <body>
     <header>
-        <h1>42_cursus_push_swap</h1>
+        <h1>push_swap</h1>
         <p>A project to sort data on a stack using a limited set of instructions with the fewest possible operations.</p>
     </header>
     <section>
         <h2>Introduction</h2>
-        <p>The <code>push_swap</code> project is a simple and efficient algorithm exercise: sorting data. You have a set of integers, two stacks, and a set of instructions to manipulate them. Your goal is to write a program in C named <code>push_swap</code> that calculates and prints the shortest possible sequence of instructions to sort the integers passed as parameters.</p>
+        <p>The <code>push_swap</code> project is designed to test and improve your algorithmic skills by sorting data using stacks. You will implement a program that sorts a stack of integers using a defined set of operations. The goal is to achieve this with the minimum number of operations.</p>
     </section>
     <section>
         <h2>Common Instructions</h2>
         <ul>
-            <li>The project must be coded in C.</li>
-            <li>Code must adhere to the coding norm.</li>
-            <li>Functions should not stop unexpectedly (segmentation fault, bus error, etc.) except for undefined behaviors.</li>
-            <li>All heap allocated memory must be properly freed when necessary. No leaks will be tolerated.</li>
-            <li>A Makefile must be provided, compiling the source files with appropriate flags and not relinking.</li>
-            <li>The Makefile must contain at least the rules: <code>$(NAME)</code>, <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code>.</li>
+            <li>The project must be coded in C and adhere to the coding norm.</li>
+            <li>Functions must handle errors gracefully without causing unexpected termination (e.g., segmentation faults).</li>
+            <li>All allocated memory must be properly freed to avoid leaks.</li>
+            <li>A Makefile must be provided to compile the project with the necessary flags.</li>
+            <li>The Makefile should include at least the rules: <code>$(NAME)</code>, <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code>.</li>
         </ul>
     </section>
     <section>
         <h2>Mandatory Part</h2>
         <h3>Rules</h3>
-        <p>The game consists of 2 stacks named <code>a</code> and <code>b</code>:</p>
-        <ul>
-            <li>Initially, stack <code>a</code> contains a random quantity of positive and/or negative numbers, which cannot be duplicated.</li>
-            <li>Stack <code>b</code> is empty.</li>
-        </ul>
-        <p>The goal is to sort the numbers in stack <code>a</code> in ascending order using the following instructions:</p>
+        <p>The <code>push_swap</code> program must sort a list of integers passed as arguments using two stacks named <code>a</code> and <code>b</code>. Initially, stack <code>a</code> contains the integers, and stack <code>b</code> is empty. The program must produce the shortest sequence of operations to sort the integers in ascending order in stack <code>a</code>.</p>
+        <p>The allowed operations are:</p>
         <ul>
             <li><code>sa</code>: Swap the first two elements at the top of stack <code>a</code>.</li>
             <li><code>sb</code>: Swap the first two elements at the top of stack <code>b</code>.</li>
-            <li><code>ss</code>: <code>sa</code> and <code>sb</code> at the same time.</li>
-            <li><code>pa</code>: Take the first element at the top of <code>b</code> and put it on <code>a</code>.</li>
-            <li><code>pb</code>: Take the first element at the top of <code>a</code> and put it on <code>b</code>.</li>
-            <li><code>ra</code>: Rotate stack <code>a</code> up by one position.</li>
-            <li><code>rb</code>: Rotate stack <code>b</code> up by one position.</li>
-            <li><code>rr</code>: <code>ra</code> and <code>rb</code> at the same time.</li>
-            <li><code>rra</code>: Reverse rotate stack <code>a</code> down by one position.</li>
-            <li><code>rrb</code>: Reverse rotate stack <code>b</code> down by one position.</li>
-            <li><code>rrr</code>: <code>rra</code> and <code>rrb</code> at the same time.</li>
+            <li><code>ss</code>: <code>sa</code> and <code>sb</code> simultaneously.</li>
+            <li><code>pa</code>: Push the top element of stack <code>b</code> onto stack <code>a</code>.</li>
+            <li><code>pb</code>: Push the top element of stack <code>a</code> onto stack <code>b</code>.</li>
+            <li><code>ra</code>: Rotate stack <code>a</code> upwards (top element becomes the last).</li>
+            <li><code>rb</code>: Rotate stack <code>b</code> upwards (top element becomes the last).</li>
+            <li><code>rr</code>: <code>ra</code> and <code>rb</code> simultaneously.</li>
+            <li><code>rra</code>: Reverse rotate stack <code>a</code> (bottom element becomes the first).</li>
+            <li><code>rrb</code>: Reverse rotate stack <code>b</code> (bottom element becomes the first).</li>
+            <li><code>rrr</code>: <code>rra</code> and <code>rrb</code> simultaneously.</li>
         </ul>
     </section>
     <section>
-        <h3>Example</h3>
-        <p>To illustrate the effect of these instructions, let's sort a list of integers. In this example, we consider the two stacks growing from right to left.</p>
-        <pre>
-Init a and b:
-2
-1
-3
-6
-5
-8
-_ _
-a b
-
-Exec sa:
-1
-2
-3
-6
-5
-8
-_ _
-a b
-
-Exec pb pb pb:
-6 3
-5 2
-8 1
-_ _
-a b
-
-Exec ra rb (equiv. to rr):
-5 2
-8 1
-6 3
-_ _
-a b
-
-Exec rra rrb (equiv. to rrr):
-6 3
-5 2
-8 1
-_ _
-a b
-
-Exec sa:
-5 3
-6 2
-8 1
-_ _
-a b
-
-Exec pa pa pa:
-1
-2
-3
-5
-6
-8
-_ _
-a b
-        </pre>
-        <p>This example sorts the integers in <code>a</code> in 12 instructions. Can you do better?</p>
+        <h2>Program Overview</h2>
+        <p>The <code>push_swap</code> program consists of several key components:</p>
+        <ul>
+            <li><code>error_check.c</code>: Validates the input arguments to ensure they are integers and there are no duplicates.</li>
+            <li><code>pile_operations.c</code>: Contains the implementation of stack operations such as push, swap, rotate, and reverse rotate.</li>
+            <li><code>pile_memory_management.c</code>: Manages the memory allocation and deallocation for the stacks.</li>
+            <li><code>pile_interchanger.c</code>: Manages the transfer of elements between stacks <code>a</code> and <code>b</code>.</li>
+            <li><code>sort_pile.c</code>: Implements the sorting algorithm to determine the sequence of operations needed to sort the stack.</li>
+            <li><code>tiny_sort.c</code>: Provides optimized sorting methods for small sets of integers.</li>
+            <li><code>sort_group.c</code> and <code>sort_rotation.c</code>: Implement advanced sorting strategies and rotations to minimize the number of operations.</li>
+            <li><code>push_swap_main.c</code>: The main entry point of the program, which initializes the stacks, processes input, and invokes the sorting algorithm.</li>
+        </ul>
     </section>
     <section>
-        <h3>Program: <code>push_swap</code></h3>
-        <ul>
-            <li><strong>Program name:</strong> <code>push_swap</code></li>
-            <li><strong>Files to turn in:</strong> <code>Makefile</code>, <code>*.h</code>, <code>*.c</code></li>
-            <li><strong>Makefile:</strong> <code>NAME</code>, <code>all</code>, <code>clean</code>, <code>fclean</code>, <code>re</code></li>
-            <li><strong>Arguments:</strong> <code>a stack</code> - a list of integers</li>
-            <li><strong>External functions allowed:</strong> <code>read</code>, <code>write</code>, <code>malloc</code>, <code>free</code>, <code>exit</code>, <code>ft_printf</code>, or equivalent functions you have coded</li>
-            <li><strong>Libft authorized:</strong> Yes</li>
-            <li><strong>Description:</strong> Sort the stacks</li>
-        </ul>
-        <p>Your program must follow these rules:</p>
-        <ul>
-            <li>The program must print the shortest sequence of instructions to sort stack <code>a</code>.</li>
-            <li>Instructions must be separated by a newline <code>'\n'</code> and nothing else.</li>
-            <li>If no parameters are specified, the program should not display anything and return the command prompt.</li>
-            <li>In case of an error, display "Error" followed by a newline <code>'\n'</code> on the error output.</li>
-        </ul>
-        <pre>
-$>./push_swap 2 1 3 6 5 8
-sa
-pb
-pb
-pb
-sa
-pa
-pa
-pa
-$>./push_swap 0 one 2 3
-Error
-$>
-        </pre>
+        <h2>Compilation</h2>
+        <p>To compile the project, use the provided Makefile. Ensure it includes the rules <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code> to manage the compilation process. The Makefile will compile the source files and generate the executable <code>push_swap</code>.</p>
+    </section>
+    <section>
+        <h2>Submission and Evaluation</h2>
+        <p>Submit your work on your assigned Git repository. Only the work present on the Git repository will be evaluated during the defense. Ensure all file and folder names conform to the project requirements.</p>
+        <p>Prepare a wide range of tests to verify your work, considering different stack sizes and orders. The number of operations produced by your program will be compared to a maximum allowed number of operations to ensure efficiency.</p>
     </section>
 </body>
 </html>
+
