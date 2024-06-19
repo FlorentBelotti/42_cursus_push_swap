@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <h1>push_swap</h1>
+        <h1>42_cursus_push_swap</h1>
         <p>A project to sort data on a stack using a limited set of instructions with the fewest possible operations.</p>
     </header>
     <section>
