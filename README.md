@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <h1><code>push_swap</code></h1>
+        <h1>42_cursus_push_swap</h1>
         <p>A project to sort data on a stack using a limited set of instructions with the fewest possible operations.</p>
     </header>
     <section>
@@ -143,15 +143,6 @@ $>./push_swap 0 one 2 3
 Error
 $>
         </pre>
-    </section>
-    <section>
-        <h2>Compilation</h2>
-        <p>Compile the library using the Makefile provided, ensuring all rules like <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code> are present to manage the library properly.</p>
-    </section>
-    <section>
-        <h2>Submission and Evaluation</h2>
-        <p>Submit your work on your assigned Git repository. Only the work present on the Git repository will be evaluated during the defense. Ensure all file and folder names conform to the project requirements.</p>
-        <p>Prepare a wide range of tests to verify your work, considering different stack sizes and orders.</p>
     </section>
 </body>
 </html>
