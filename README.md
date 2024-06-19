@@ -60,11 +60,6 @@
         <h2>Compilation</h2>
         <p>To compile the project, use the provided Makefile. Ensure it includes the rules <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code> to manage the compilation process. The Makefile will compile the source files and generate the executable <code>push_swap</code>.</p>
     </section>
-    <section>
-        <h2>Submission and Evaluation</h2>
-        <p>Submit your work on your assigned Git repository. Only the work present on the Git repository will be evaluated during the defense. Ensure all file and folder names conform to the project requirements.</p>
-        <p>Prepare a wide range of tests to verify your work, considering different stack sizes and orders. The number of operations produced by your program will be compared to a maximum allowed number of operations to ensure efficiency.</p>
-    </section>
 </body>
 </html>
 
