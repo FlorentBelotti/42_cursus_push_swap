@@ -9,11 +9,21 @@
         <h1>42_cursus_push_swap</h1>
         <p>A project to sort data on a stack using a limited set of instructions with the fewest possible operations.</p>
     </header>
-    <section>
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#common-instructions">Common Instructions</a></li>
+            <li><a href="#mandatory-part">Mandatory Part</a></li>
+            <li><a href="#program-overview">Program Overview</a></li>
+            <li><a href="#compilation">Compilation</a></li>
+        </ul>
+    </nav>
+    <section id="introduction">
         <h2>Introduction</h2>
         <p>The <code>push_swap</code> project is designed to test and improve your algorithmic skills by sorting data using stacks. You will implement a program that sorts a stack of integers using a defined set of operations. The goal is to achieve this with the minimum number of operations.</p>
     </section>
-    <section>
+    <section id="common-instructions">
         <h2>Common Instructions</h2>
         <ul>
             <li>The project must be coded in C and adhere to the coding norm.</li>
@@ -23,7 +33,7 @@
             <li>The Makefile should include at least the rules: <code>$(NAME)</code>, <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code>.</li>
         </ul>
     </section>
-    <section>
+    <section id="mandatory-part">
         <h2>Mandatory Part</h2>
         <h3>Rules</h3>
         <p>The <code>push_swap</code> program must sort a list of integers passed as arguments using two stacks named <code>a</code> and <code>b</code>. Initially, stack <code>a</code> contains the integers, and stack <code>b</code> is empty. The program must produce the shortest sequence of operations to sort the integers in ascending order in stack <code>a</code>.</p>
@@ -42,7 +52,7 @@
             <li><code>rrr</code>: <code>rra</code> and <code>rrb</code> simultaneously.</li>
         </ul>
     </section>
-    <section>
+    <section id="program-overview">
         <h2>Program Overview</h2>
         <p>The <code>push_swap</code> program consists of several key components:</p>
         <ul>
@@ -56,10 +66,9 @@
             <li><code>push_swap_main.c</code>: The main entry point of the program, which initializes the stacks, processes input, and invokes the sorting algorithm.</li>
         </ul>
     </section>
-    <section>
+    <section id="compilation">
         <h2>Compilation</h2>
         <p>To compile the project, use the provided Makefile. Ensure it includes the rules <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code> to manage the compilation process. The Makefile will compile the source files and generate the executable <code>push_swap</code>.</p>
     </section>
 </body>
 </html>
-
